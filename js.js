@@ -5,7 +5,6 @@ $(document).ready(function() {
         var closingCostTotal = Math.round(homePrice * ($("#totalClosingPercentage").val()/100));
         var buyerClosingTotal = Math.round(closingCostTotal * ($("#buyerClosingPercentage").val()/100));
 
-        //todo.text() to set value
         $("#downPayment").text(downPayment);
         $("#closingCostPayment").text(buyerClosingTotal);
         $("#cashToClose").text(parseInt(downPayment) + parseInt(buyerClosingTotal));
