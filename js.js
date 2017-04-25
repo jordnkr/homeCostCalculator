@@ -12,7 +12,7 @@ $(document).ready(function() {
 
     $("#resetBtn").on( "click", function() {
         $("#homePrice").val("");
-        $("#totalClosingPercentage").val("3");
+        $("#totalClosingPercentage").val("3.0");
         $("#buyerClosingPercentage").val("100");
         $("#downPayment").text("0");
         $("#closingCostPayment").text("0");
