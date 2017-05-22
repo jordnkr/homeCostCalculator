@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Cost Calculators</title>
+    <link rel="stylesheet" type="text/css" href="bulma.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/shared.js"></script>
+    <script type="text/javascript" src="./js/cashToClose.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="nav">
+            <div class="nav-left">
+                <div class="nav-item">
+                    <a class="title" style="color:#00d1b2" href="index.html"><b>Home Cost Calculators</b></a>
+                </div>
+            </div>
+
+            <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+            <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+            <span class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+
+            <!-- This "nav-menu" is hidden on mobile -->
+            <!-- Add the modifier "is-active" to display it on mobile -->
+            <div class="nav-right nav-menu">
+                <a class="nav-item is-tab is-active" href="cashToCloseCalculator.html">Cash To Close</a>
+                <a class="nav-item is-tab" href="expectedPaymentsCalculator.html">Expected Payments</a>
+            </div>
+        </nav>
+        <section class="section"  style="padding-top:10px">
+            <div class="columns is-hidden-tablet" style="margin-bottom:0px">
+                <div class="column content is-12">
+                    <h3 class="has-text-centered">Cash To Close Calculator</h3>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-2 is-offset-4 has-text-centered">
+                    <label class="label">Home Price</label>
+                    <p class="control has-icons-left has-icons-right">
+                        <input id="homePrice" class="input has-text-centered" type="text" placeholder="USD">
+                        <span class="icon is-small is-left">
+                            <i class="fa fa-usd"></i>
+                        </span>
+                    </p>
+                </div>
+                <div class="column is-2 has-text-centered">
+                    <label class="label">Down Payment %</label>
+                    <span class="select">
+                        <select id="downPaymentPercentage" name="downPaymentPercentage">
+                            <option selected>20</option>
+                            <option>19</option>
+                            <option>18</option>
+                            <option>17</option>
+                            <option>16</option>
+                            <option>15</option>
+                            <option>14</option>
+                            <option>13</option>
+                            <option>12</option>
+                            <option>11</option>
+                            <option>10</option>
+                        </select>
+                    </span>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-2 is-offset-4 has-text-centered">
+                    <label class="label">Closing Cost %</label>
+                    <span class="select">
+                            <select id="totalClosingPercentage" name="totalClosingPercentage">
+                                <option>5.0</option>
+                                <option>4.5</option>
+                                <option>4.0</option>
+                                <option>3.5</option>
+                                <option selected>3.0</option>
+                                <option>2.5</option>
+                                <option>2.0</option>
+                                <option>1.5</option>
+                                <option>1.0</option>
+                                <option>0.5</option>
+                                <option>0</option>
+                            </select>
+                        </span>
+                </div>
+                <div class="column is-2 has-text-centered">
+                    <label class="label">Buyer % of Closing Costs</label>
+                    <span class="select">
+                            <select id="buyerClosingPercentage" name="buyerClosingPercentage">
+                                <option>100</option>
+                                <option>90</option>
+                                <option>80</option>
+                                <option>70</option>
+                                <option>60</option>
+                                <option>50</option>
+                                <option>40</option>
+                                <option>30</option>
+                                <option>20</option>
+                                <option>10</option>
+                                <option>0</option>
+                            </select>
+                        </span>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column is-4 is-offset-4 has-text-centered">
+                    <div class="block">
+                        <a id="submitBtn" class="button is-primary">Submit</a>
+                        <a id="resetBtn" class="button is-link">Reset</a>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="columns">
+                <div class="column is-2 is-offset-4 has-text-centered">
+                    <p class="resultHeading">Down Payment</p>
+                    <p class="resultNumber">
+                        <span>$</span>
+                        <span id="downPayment">0</span>
+                    </p>
+                </div>
+                <div class="column is-2 has-text-centered">
+                    <p class="resultHeading">Closing Cost Payment</p>
+                    <p class="resultNumber">
+                        <span>$</span>
+                        <span id="closingCostPayment">0</span>
+                    </p>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column has-text-centered">
+                    <p class="resultHeading">Total Cash To Close</p>
+                    <p class="resultNumber">
+                        <span>$</span>
+                        <span id="cashToClose">0</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>
