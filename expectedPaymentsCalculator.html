@@ -18,10 +18,10 @@
         <nav class="nav">
             <div class="nav-left">
                 <div class="nav-item is-hidden-mobile">
-                    <a class="title" style="color:#00d1b2" href="index.html"><b>Home Cost Calculators</b></a>
+                    <a class="title" style="color:#00d1b2" href="./index.html"><b>Home Cost Calculators</b></a>
                 </div>
                 <div class="nav-item is-hidden-tablet">
-                    <a class="title" style="color:#00d1b2" href="index.html"><b>HCC</b></a>
+                    <a class="title" style="color:#00d1b2" href="./index.html"><b>HCC</b></a>
                 </div>
             </div>
 
@@ -36,8 +36,8 @@
             <!-- This "nav-menu" is hidden on mobile -->
             <!-- Add the modifier "is-active" to display it on mobile -->
             <div class="nav-right nav-menu">
-                <a class="nav-item is-tab" href="cashToCloseCalculator.html">Cash To Close</a>
-                <a class="nav-item is-tab is-active" href="expectedPaymentsCalculator.html">Expected Payments</a>
+                <a class="nav-item is-tab" href="./cashToCloseCalculator.html">Cash To Close</a>
+                <a class="nav-item is-tab is-active" href="./expectedPaymentsCalculator.html">Expected Payments</a>
             </div>
         </nav>
         <section class="section"  style="padding-top:10px">
@@ -47,7 +47,7 @@
                 </div>
             </div>
             <div class="columns">
-                <div class="column is-2 is-offset-4 has-text-centered">
+                <div class="column is-3 is-offset-3 has-text-centered">
                     <label class="label">Home Price</label>
                     <p class="control has-icons-left has-icons-right">
                         <input id="homePrice" class="input has-text-centered" type="text" placeholder="USD">
@@ -56,7 +56,7 @@
                             </span>
                     </p>
                 </div>
-                <div class="column is-2 has-text-centered">
+                <div class="column is-3 has-text-centered">
                     <label class="label">Down Payment %</label>
                     <span class="select">
                         <select id="downPaymentPercentage" name="downPaymentPercentage">
@@ -76,7 +76,7 @@
                 </div>
             </div>
             <div class="columns">
-                <div class="column is-2 is-offset-4 has-text-centered">
+                <div class="column is-3 is-offset-3 has-text-centered">
                     <label class="label">Interest Rate</label>
                     <p class="control has-icons-left has-icons-right">
                         <input id="interestRate" class="input has-text-centered" type="text" placeholder="0" value="4.2">
@@ -85,7 +85,7 @@
                             </span>
                     </p>
                 </div>
-                <div class="column is-2 has-text-centered">
+                <div class="column is-3 has-text-centered">
                     <label class="label">Property Taxes /year</label>
                     <p class="control has-icons-left has-icons-right">
                         <input id="taxes" class="input has-text-centered" type="text" placeholder="0">
@@ -96,7 +96,7 @@
                 </div>
             </div>
             <div class="columns">
-                <div class="column is-2 is-offset-4 has-text-centered">
+                <div class="column is-3 is-offset-3 has-text-centered">
                     <label class="label">HOA Fees /month</label>
                     <p class="control has-icons-left has-icons-right">
                         <input id="hoaFees" class="input has-text-centered" type="text" placeholder="0">
@@ -105,12 +105,12 @@
                         </span>
                     </p>
                 </div>
-                <div class="column is-2 has-text-centered">
-                    <label class="label">Insurance /month</label>
+                <div class="column is-3 has-text-centered">
+                    <label class="label">Insurance % /month</label>
                     <p class="control has-icons-left has-icons-right">
-                        <input id="insurance" class="input has-text-centered" type="text" placeholder="0" value="90">
-                        <span class="icon is-small is-left">
-                                <i class="fa fa-usd"></i>
+                        <input id="insurance" class="input has-text-centered" type="text" placeholder="0" value="0.54">
+                        <span class="icon is-small is-right">
+                                <i class="fa fa-percent"></i>
                             </span>
                     </p>
                 </div>
@@ -125,14 +125,14 @@
             </div>
             <br />
             <div class="columns" style="margin-bottom:25px;">
-                <div class="column is-2 is-offset-4 has-text-centered">
+                <div class="column is-3 is-offset-3 has-text-centered">
                     <p class="resultHeading">Down Payment</p>
                     <p class="resultNumber">
                         <span>$</span>
                         <span id="downPayment">0</span>
                     </p>
                 </div>
-                <div class="column is-2 has-text-centered">
+                <div class="column is-3 has-text-centered">
                     <p class="resultHeading">Monthly Payment</p>
                     <p class="resultNumber">
                         <span>$</span>

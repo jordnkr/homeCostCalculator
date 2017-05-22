@@ -5,7 +5,7 @@ $(document).ready(function() {
         var interestRate = $("#interestRate").val() / 100 / 12; //monthly interest rate
         var taxes = $("#taxes").val();
         var hoaFees = $("#hoaFees").val();
-        var insurance = $("#insurance").val();
+        var insurance = ($("#insurance").val() / 100 / 12) * homePrice;
 
         if (interestRate == "") {
             interestRate = 0;
