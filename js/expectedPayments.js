@@ -32,7 +32,7 @@ $(document).ready(function() {
         $("#interestRate").val("4.2");
         $("#taxes").val("");
         $("#hoaFees").val("");
-        $("#insurance").val("90");
+        $("#insurance").val("0.54");
         $("#downPayment").text("0");
         $("#monthlyPayment").text("0");
     });
