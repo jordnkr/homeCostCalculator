@@ -10,7 +10,7 @@ var totalCashToCloseOutput = document.getElementById('cashToClose');
 
 submitBtn.addEventListener('click', function() {
     var homePrice = homePriceInput.value;
-    var downPayment = homePrice * (downPaymentPercentageInput.value/100);
+    var downPayment = Math.round(homePrice * (downPaymentPercentageInput.value/100));
     var closingCostTotal = Math.round(homePrice * (totalClosingPercentageInput.value/100));
     var buyerClosingTotal = Math.round(closingCostTotal * (buyerClosingPercentageInput.value/100));
 
