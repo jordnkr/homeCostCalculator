@@ -1,43 +1,52 @@
-$(document).ready(function() {
-    $("#submitBtn").on( "click", function() {
-        var homePrice = $("#homePrice").val();
-        var downPaymentPercent = $("#downPaymentPercentage").val()/100;
-        var interestRate = $("#interestRate").val() / 100 / 12; //monthly interest rate
-        var taxes = $("#taxes").val();
-        var hoaFees = $("#hoaFees").val();
-        var insurance = ($("#insurance").val() / 100 / 12) * homePrice;
+var submitBtn = document.getElementById('submitBtn');
+var resetBtn = document.getElementById('resetBtn');
+var homePriceInput = document.getElementById('homePrice');
+var downPaymentPercentageInput = document.getElementById('downPaymentPercentage');
+var interestRateInput = document.getElementById('interestRate');
+var taxesInput = document.getElementById('taxes');
+var hoaFeesInput = document.getElementById('hoaFees');
+var insuranceInput = document.getElementById('insurance');
+var downPaymentOutput = document.getElementById('downPayment');
+var monthlyPaymentOutput = document.getElementById('monthlyPayment');
 
-        if (interestRate == "") {
-            interestRate = 0;
-        }
-        if (taxes == "") {
-            taxes = 0;
-        }
-        if (hoaFees == "") {
-            hoaFees = 0;
-        }
-        if (insurance == "") {
-            insurance = 0;
-        }
+submitBtn.addEventListener('click', function() {
+    var homePrice = homePriceInput.value;
+    var downPaymentPercent = downPaymentPercentageInput.value/100;
+    var interestRate = interestRateInput.value / 100 / 12; //monthly interest rate
+    var taxes = taxesInput.value;
+    var hoaFees = hoaFeesInput.value;
+    var insurance = (insuranceInput.value / 100 / 12) * homePrice;
 
-        var monthly = Math.round(monthlyPayment(homePrice - (homePrice * downPaymentPercent), 360, interestRate));
-
-        $("#downPayment").text(Math.round(homePrice * downPaymentPercent));
-        $("#monthlyPayment").text(parseInt(monthly) + parseInt(taxes/12) + parseInt(hoaFees) + parseInt(insurance));
-    });
-
-    $("#resetBtn").on( "click", function() {
-        $("#homePrice").val("");
-        $("#downPaymentPercentage").val("20");
-        $("#interestRate").val("4.2");
-        $("#taxes").val("");
-        $("#hoaFees").val("");
-        $("#insurance").val("0.54");
-        $("#downPayment").text("0");
-        $("#monthlyPayment").text("0");
-    });
-
-    function monthlyPayment(price, payments, interest) {
-        return price * interest * (Math.pow(1 + interest, payments)) / (Math.pow(1 + interest, payments) - 1);
+    if (interestRate == "") {
+        interestRate = 0;
     }
+    if (taxes == "") {
+        taxes = 0;
+    }
+    if (hoaFees == "") {
+        hoaFees = 0;
+    }
+    if (insurance == "") {
+        insurance = 0;
+    }
+
+    var monthly = Math.round(monthlyPayment(homePrice - (homePrice * downPaymentPercent), 360, interestRate));
+
+    downPaymentOutput.textContent = Math.round(homePrice * downPaymentPercent);
+    monthlyPaymentOutput.textContent = parseInt(monthly) + parseInt(taxes/12) + parseInt(hoaFees) + parseInt(insurance);
 });
+
+resetBtn.addEventListener('click', function() {
+    homePriceInput.value = "";
+    downPaymentPercentageInput.value = "20";
+    interestRateInput.value = "4.2";
+    taxesInput.value = "";
+    hoaFeesInput.value = "";
+    insuranceInput.value = "0.54";
+    downPaymentOutput.textContent = "0";
+    monthlyPaymentOutput.textContent = "0";
+});
+
+function monthlyPayment(price, payments, interest) {
+    return price * interest * (Math.pow(1 + interest, payments)) / (Math.pow(1 + interest, payments) - 1);
+}

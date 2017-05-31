@@ -1,22 +1,30 @@
-$(document).ready(function() {
-    $("#submitBtn").on("click", function() {
-        var homePrice = $("#homePrice").val();
-        var downPayment = homePrice * ($("#downPaymentPercentage").val()/100);
-        var closingCostTotal = Math.round(homePrice * ($("#totalClosingPercentage").val()/100));
-        var buyerClosingTotal = Math.round(closingCostTotal * ($("#buyerClosingPercentage").val()/100));
+var submitBtn = document.getElementById('submitBtn');
+var resetBtn = document.getElementById('resetBtn');
+var homePriceInput = document.getElementById('homePrice');
+var downPaymentPercentageInput = document.getElementById('downPaymentPercentage');
+var totalClosingPercentageInput = document.getElementById('totalClosingPercentage');
+var buyerClosingPercentageInput = document.getElementById('buyerClosingPercentage');
+var downPaymentOutput = document.getElementById('downPayment');
+var closingCostOutput = document.getElementById('closingCostPayment');
+var totalCashToCloseOutput = document.getElementById('cashToClose');
 
-        $("#downPayment").text(downPayment);
-        $("#closingCostPayment").text(buyerClosingTotal);
-        $("#cashToClose").text(parseInt(downPayment) + parseInt(buyerClosingTotal));
-    });
+submitBtn.addEventListener('click', function() {
+    var homePrice = homePriceInput.value;
+    var downPayment = homePrice * (downPaymentPercentageInput.value/100);
+    var closingCostTotal = Math.round(homePrice * (totalClosingPercentageInput.value/100));
+    var buyerClosingTotal = Math.round(closingCostTotal * (buyerClosingPercentageInput.value/100));
 
-    $("#resetBtn").on("click", function() {
-        $("#homePrice").val("");
-        $("#downPaymentPercentage").val("20");
-        $("#totalClosingPercentage").val("3.0");
-        $("#buyerClosingPercentage").val("100");
-        $("#downPayment").text("0");
-        $("#closingCostPayment").text("0");
-        $("#cashToClose").text("0");
-    });
+    downPaymentOutput.textContent = downPayment;
+    closingCostOutput.textContent = buyerClosingTotal;
+    totalCashToCloseOutput.textContent = parseInt(downPayment) + parseInt(buyerClosingTotal);
+});
+
+resetBtn.addEventListener('click', function() {
+    homePriceInput.value = "";
+    downPaymentPercentageInput.value = "20";
+    totalClosingPercentageInput.value = "3.0";
+    buyerClosingPercentageInput.value = "100";
+    downPaymentOutput.textContent = "0";
+    closingCostOutput.textContent = "0";
+    totalCashToCloseOutput.textContent = "0";
 });
